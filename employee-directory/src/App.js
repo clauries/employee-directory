@@ -2,14 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Directory from "./pages/Directory";
 import About from "./pages/About";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Wrapper from "./components/Wrapper";
+import Footer from "./components/Footer/index";
+import Navbar from "./components/Navbar/index";
+import Wrapper from "./components/Wrapper/index";
 
 function App() {
     return (
         <Router>
-            <div>
+            <div id="container">
                 <Navbar />
                 <Wrapper>
                     <Route exact path="/" component={Directory} />

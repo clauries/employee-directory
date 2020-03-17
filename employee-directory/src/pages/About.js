@@ -1,8 +1,10 @@
 import React from 'react';
 
 const AboutPage = () => (
-    <div className="container">
-        <h1>This is an employee directory website.</h1>
+    <div id="mainContent">
+        <h1>About</h1>
+        <p>This is an easy to use employee directory.</p>
+        <p>Search and filter by employee name.</p>
     </div>
 )
 

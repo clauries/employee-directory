@@ -14,7 +14,7 @@ class Directory extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div id="mainContent">
                 <p>Hello world</p>
             </div>
         )

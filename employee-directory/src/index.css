@@ -1,3 +1,4 @@
+/* Start Global */
 * {
   box-sizing: border-box;
 }
@@ -12,3 +13,24 @@ div[data-reactroot] {
     margin: 0;
 }
 
+html {
+  height: 100%
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex: 1 0 auto;
+  
+}
+
+#mainContent {
+  flex: 1 0 auto;
+}
+
+/* End Global */
