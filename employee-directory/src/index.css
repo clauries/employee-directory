@@ -1,13 +1,14 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
   
-  html,
-  body,
-  #root,
-  #root > div,
-  div[data-reactroot] {
+html,
+body,
+#root,
+#root > div,
+div[data-reactroot] {
     height: 100%;
     padding: 0;
     margin: 0;
-  }
+}
+
