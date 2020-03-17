@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import SearchForm from "../components/SearchForm";
+import ResultsTable from "../components/ResultsTable";
 
 
 class Directory extends Component {
@@ -15,7 +17,8 @@ class Directory extends Component {
     render() {
         return (
             <div id="mainContent">
-                <p>Hello world</p>
+                <SearchForm />
+                <ResultsTable />
             </div>
         )
     }
