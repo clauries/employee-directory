@@ -5,11 +5,14 @@ import ResultsTable from "../components/ResultsTable";
 
 
 class Directory extends Component {
+
+    
     componentDidMount() {
         API.getAllEmpoyees()
             .then(res => {
                 console.log("res", res);
-                //this.setState({ names: res.data.message });
+                const persons = res.data.results;
+                this.setState({ persons });
             })
             .catch(err => console.log(err));
     }
@@ -18,7 +21,7 @@ class Directory extends Component {
         return (
             <div id="mainContent">
                 <SearchForm />
-                <ResultsTable />
+                <ResultsTable rowContent={this.state}/>
             </div>
         )
     }
