@@ -5,6 +5,12 @@ import ResultsTable from "../components/ResultsTable";
 
 
 class Directory extends Component {
+    
+    state = {
+        search: "",
+        persons: [],
+        error:""
+    }
 
     
     componentDidMount() {
@@ -21,7 +27,7 @@ class Directory extends Component {
         return (
             <div id="mainContent">
                 <SearchForm />
-                <ResultsTable rowContent={this.state}/>
+                <ResultsTable persons={this.state.persons}/>
             </div>
         )
     }

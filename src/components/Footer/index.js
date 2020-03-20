@@ -3,7 +3,7 @@ import "./style.css";
 
 function Footer() {
   return (
-    <footer id="copyright" className="copyright footer-dark bg-dark mt-4 align-items-end">
+    <footer id="copyright" className="copyright footer-dark bg-dark mt-4">
       <p>
         &copy; 2020 Laurie Schroeder
       </p>

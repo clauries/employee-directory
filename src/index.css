@@ -21,10 +21,14 @@ h1 {
   margin-bottom: 20px;
 }
 
+body {
+  height: 100vh;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  
   flex: 1 0 auto;
   
 }

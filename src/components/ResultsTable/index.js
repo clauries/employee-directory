@@ -3,26 +3,37 @@ import "./style.css";
 
 function ResultsTable(props) {
     console.log(props);
+
+    const dateFormat = require('dateformat');
+
     return (
         <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Country</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                </tr>
+            </thead>
             <tbody>
-            <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Phone Number</th>
-                <th>Email</th>
-                <th>Date of Birth</th>
-            </tr>
-            <tr>
-                <td>#
-                    {/* {props.rowContent.picture.medium} */}
-                    </td>
-                <td>Jill Smith</td>
-                <td>999-999-9999</td>
-                <td>email@email.com</td>
-                <td>01/01/01</td>
-            </tr>
+                {props.persons.map((person, index) => {
+                    return (
+                        <tr>
+                            <td><img src={person.picture.medium} alt={person.name.last} /></td>
+                            <td>{person.name.first} {person.name.last}</td>
+                            <td>{person.location.country}</td>
+                            <td>{person.phone}</td>
+                            <td>{person.email}</td>
+                            <td>{dateFormat(person.dob.date, 'mediumDate')}</td>
+                        </tr>
+                    )
+                })}
             </tbody>
+
+
         </table>
     )
 }

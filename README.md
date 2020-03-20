@@ -6,7 +6,7 @@ A react app allowing employees to view a directory of all their coworkers.
 
 <img src="#" alt="App Image"/>
 
-#### [Deployed App](#)
+#### [Deployed App](https://pure-journey-91812.herokuapp.com/)
 
 ## Concept
 As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
