@@ -12,7 +12,6 @@ function ResultsTable(props) {
                 <tr>
                     <th>Image</th>
                     <th>Name</th>
-                    <th>Country</th>
                     <th>Phone Number</th>
                     <th>Email</th>
                     <th>Date of Birth</th>
@@ -24,7 +23,6 @@ function ResultsTable(props) {
                         <tr>
                             <td><img src={person.picture.medium} alt={person.name.last} /></td>
                             <td>{person.name.first} {person.name.last}</td>
-                            <td>{person.location.country}</td>
                             <td>{person.phone}</td>
                             <td>{person.email}</td>
                             <td>{dateFormat(person.dob.date, 'mediumDate')}</td>

@@ -5,14 +5,14 @@ import ResultsTable from "../components/ResultsTable";
 
 
 class Directory extends Component {
-    
+
     state = {
         search: "",
         persons: [],
-        error:""
+        error: ""
     }
 
-    
+
     componentDidMount() {
         API.getAllEmpoyees()
             .then(res => {
@@ -23,11 +23,27 @@ class Directory extends Component {
             .catch(err => console.log(err));
     }
 
+    handleInputChange = event => {
+        this.setState({ search: event.target.value });
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        API.getEmployeesByName(this.state.search)
+            .then(res => {
+                if (res.data.status === "error") {
+                    throw new Error(res.data.message);
+                }
+                this.setState({ results: res.data.message, error: "" });
+            })
+            .catch(err => this.setState({ error: err.message }));
+    };
+
     render() {
         return (
             <div id="mainContent">
                 <SearchForm />
-                <ResultsTable persons={this.state.persons}/>
+                <ResultsTable persons={this.state.persons} />
             </div>
         )
     }
