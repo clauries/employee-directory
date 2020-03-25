@@ -4,7 +4,7 @@
 A react app allowing employees to view a directory of all their coworkers.
 
 
-<img src="./public/employee-directory" alt="App Image"/>
+<img src="./public/employee-directory.png" alt="App Image"/>
 
 #### [Deployed App](https://pure-journey-91812.herokuapp.com/)
 
