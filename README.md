@@ -4,7 +4,7 @@
 A react app allowing employees to view a directory of all their coworkers.
 
 
-<img src="#" alt="App Image"/>
+<img src="./public/employee-directory" alt="App Image"/>
 
 #### [Deployed App](https://pure-journey-91812.herokuapp.com/)
 
@@ -13,26 +13,34 @@ As a user, I want to be able to view my entire employee directory at once so tha
 
 ## Installation and Usage
 1. Install the required modules by typing "npm install" or "npm i" using your code editor terminal; must be at the same level as the package.json.
-2. Run the app by typing "node server.js" or "node server."
-3. The console log will display " Server listening on: http://localhost:3000 ."
-
+2. This app's uses the [Random User Api ](https://randomuser.me/). 
+    * If you would like to insert your own employee list: 
+        1. Update the axios call in ./src/utils/API.js. 
+        2. Then verify the props on ./src/ResultsTable/index.js, lines 23-27, call the correct info (ie. you may need person.firstName instead of person.name.first).
+    * An additional option: While I was working on this app, the Random User website crashed for a bit. Random User is an open source project and has a [repo on GitHub](https://github.com/RandomAPI/Randomuser.me-Node). I downloaded the repo and hosted a version of the API on my localhost server port 4000. If you choose to do the same, change the axios call to "http://localhost:4000/api/?results=200&nat=us" . If needed, update the 4000 to the port running your local version of Random Users. 
+3. Run the app by typing "npm start". A new window should open in your default browser. If it does not, fo to http://localhost:3000 .
 
 
 ## Tech Utilized
+* React
 * HTML
 * CSS
 * Javascript
 * jQuery
+* Bootstrap
 * NPM
-* React
-
-
+* Node
 
 
 ## Future Development
-
+* Search as user types. Currently, the app searches only when user clicks the search button. Using state, the app could potentially filter users after every keystroke.
+* Using components, this app could render a more detailed profile for each employee when someone clicks on their information. 
+* A feature could be added that could start an email when the email address is clicked. 
+* A feature could be added to call the phone number when clicked using a phone program like skype. 
 
 ## Credits
+* [Random User Api ](https://randomuser.me/) provided all the random employees for this project.
+* This project was one of my first React projects and I could not have completed it without the help of my Instructor, tutor, and TAs at the University of Oregon Coding Bootcamp.
 
 
 ## License

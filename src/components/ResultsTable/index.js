@@ -2,7 +2,6 @@ import React from "react";
 import "./style.css";
 
 function ResultsTable(props) {
-    console.log(props);
 
     const dateFormat = require('dateformat');
 
@@ -20,7 +19,7 @@ function ResultsTable(props) {
             <tbody>
                 {props.persons.map((person, index) => {
                     return (
-                        <tr>
+                        <tr key={index}>
                             <td><img src={person.picture.medium} alt={person.name.last} /></td>
                             <td>{person.name.first} {person.name.last}</td>
                             <td>{person.phone}</td>

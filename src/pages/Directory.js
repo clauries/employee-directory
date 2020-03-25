@@ -7,43 +7,55 @@ import ResultsTable from "../components/ResultsTable";
 class Directory extends Component {
 
     state = {
-        search: "",
-        persons: [],
-        error: ""
+        persons: []
     }
 
 
     componentDidMount() {
         API.getAllEmpoyees()
             .then(res => {
-                console.log("res", res);
+                // console.log("Directory res", res);
                 const persons = res.data.results;
                 this.setState({ persons });
+                
             })
             .catch(err => console.log(err));
     }
 
     handleInputChange = event => {
-        this.setState({ search: event.target.value });
+        if( event.target.value.length < 1 ) {
+            API.getAllEmpoyees()
+            .then(res => {
+                // console.log("Directory res", res);
+                const persons = res.data.results;
+                this.setState({ persons });
+                
+            })
+            .catch(err => console.log(err));
+        }
     };
 
     handleFormSubmit = event => {
         event.preventDefault();
-        API.getEmployeesByName(this.state.search)
-            .then(res => {
-                if (res.data.status === "error") {
-                    throw new Error(res.data.message);
-                }
-                this.setState({ results: res.data.message, error: "" });
-            })
-            .catch(err => this.setState({ error: err.message }));
+        const searchTerm = document.getElementById('searchedPerson').value.toLowerCase();
+        const filteredPersons = this.state.persons.filter(person => {
+            const lowerPerson = person.name.first.toLowerCase()
+            if (lowerPerson === searchTerm) {
+                return person;
+            }
+        });
+        this.setState({ persons: filteredPersons });
+  
     };
 
     render() {
         return (
             <div id="mainContent">
-                <SearchForm />
-                <ResultsTable persons={this.state.persons} />
+                <SearchForm 
+                handleFormSubmit={this.handleFormSubmit}
+                handleInputChange={this.handleInputChange}
+                />
+                <ResultsTable persons={this.state.persons} index={this.state.index} />
             </div>
         )
     }
